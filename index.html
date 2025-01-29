@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="VX Home Page - Explore amazing posts with a modern interface.">
+    <meta name="keywords" content="VX, posts, home, web development, design">
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="scripts/scripts.js" defer></script>
+    <title>VX - Home</title>
+</head>
+<body>
+    <!--Header/encabezado-->
+    <div class="header">
+        <!--Logo del sitio y barra de busqueda-->
+        <h1>VX-Site<i class="fas fa-paper-plane"></i></h1>
+        <div class="search-bar">
+            <input type="text" placeholder="Search...">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+        <!--Iconos adicionales de mensaje y usuario-->
+        <div class="icons">
+            <i class="fas fa-bell"></i>
+            <i class="fas fa-envelope"></i>
+        </div>
+        <!--Bottones de registro e inicio de sesion-->
+        <div class="auth-buttons">
+            <button>Login</button>
+            <button>Sign Up</button>
+        </div>
+    </div>
+
+    <!--Ventanas modales/cuadricula inicial-->
+    <div class="grid">
+        <div class="post" data-modal="modal1">
+            <i class="fas fa-image"></i>
+        </div>
+        <div class="post" data-modal="modal2">
+            <i class="fas fa-image"></i>
+        </div>
+        <div class="post" data-modal="modal3">
+            <i class="fas fa-image"></i>
+        </div>
+    </div>
+
+    <!--Ventanas modales, container general-->
+    <div class="modal-container">
+        <!--Modal #1-->
+        <div class="modal" id="modal1">
+            <div class="modal-content">
+                <img src="images/post (1).jpeg" alt="Expanded Post 1" loading="lazy">
+                <div class="name">Mariana Espinosa</div>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure maiores delectus autem natus libero aut soluta ducimus recusandae at neque necessitatibus officiis atque, accusamus officia debitis incidunt itaque! Totam, beatae!
+                </p>
+                <div class="icons">
+                    <i class="fas fa-heart"></i>
+                    <i class="fas fa-comment"></i>
+                    <i class="fas fa-ellipsis-h"></i>
+                </div>
+            </div>
+            <span class="close-btn" onclick="closeModal('modal1')"><i class="fas fa-times"></i></span>
+        </div>
+
+        <!--Modal #2-->
+        <div class="modal" id="modal2">
+            <div class="modal-content">
+                <img src="images/post (2).jpeg" alt="Expanded Post 2" loading="lazy">
+                <div class="name">Santiaga Daza</div>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus modi earum saepe veritatis, iusto, quam, voluptatibus harum nostrum nesciunt quas ipsam magnam. Quaerat cumque labore natus adipisci odit, illo eos!
+                </p>
+                <div class="icons">
+                    <i class="fas fa-heart"></i>
+                    <i class="fas fa-comment"></i>
+                    <i class="fas fa-ellipsis-h"></i>
+                </div>
+            </div>
+            <span class="close-btn" onclick="closeModal('modal2')"><i class="fas fa-times"></i></span>
+        </div>
+
+        <!--Modal #3-->
+        <div class="modal" id="modal3">
+            <div class="modal-content">
+                <img src="images/post (3).jpeg" alt="Expanded Post 3" loading="lazy">
+                <div class="name">Daniela Daza</div>
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam odio sit quaerat esse asperiores accusantium corporis, consectetur hic velit fugit molestias illo repudiandae expedita veniam similique. Adipisci voluptatem magni suscipit.
+                </p>
+                <div class="icons">
+                    <i class="fas fa-heart"></i>
+                    <i class="fas fa-comment"></i>
+                    <i class="fas fa-ellipsis-h"></i>
+                </div>
+            </div>
+            <span class="close-btn" onclick="closeModal('modal3')"><i class="fas fa-times"></i></span>
+        </div>
+    </div>
+
+    <!--Esta es la seccion de pie de página-->
+    <footer>
+        <div class="footer-links">
+            <a href="#">About Us</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="social-icons">
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-linkedin"></i>
+        </div>
+        <p>&copy; 2025 VX Site. All rights reserved.</p>
+    </footer>
+</body>
+</html>

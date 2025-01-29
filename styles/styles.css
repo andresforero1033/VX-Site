@@ -1,0 +1,333 @@
+/*Estilos generales del sitio*/
+body{
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #000;
+    color: #fff;
+    padding: 0 20%;
+}
+/*Estilos del header*/
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: linear-gradient(90deg,#8a2be2, #4b0082);
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+    border-bottom: 2px solid #4b0082;
+}
+.header h1{
+    margin: 0;
+    font-size: 2.4rem;
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+    font-family: 'Orbitron', sans-serif;
+}
+.header h1 i{
+    margin-left: 0.5rem;
+    font-size: 1.5rem;
+    animation: fly 3s linear infinite;
+}
+/*
+animacion del icono del logo - funciona desdel el punto 0, despues se despplaza en x 10px y regresa a la posicion inicial.
+esta animacion funciona de forma infinita, gracias a la caracteristica que le brindamos en la clase .header h1 i{...animation: fly 3s linear infinite}
+*/
+@keyframes fly{
+    0%{
+        transform: translateX(0);
+    }
+    50%{
+        transform: translateX(10px);
+    }   
+    100%{
+        transform: translateX(0);
+    } 
+}
+/*
+Estilos de la barra de busqueda - incluido su icono de busqueda.
+*/
+.search-bar{
+    display: flex;
+    align-items: center;
+    background-color: #333;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    width: 32%;
+}
+.search-bar input{
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    padding: 0.5rem;
+    width: 100%;
+    font-size: 1rem;  
+}
+.search-bar button{
+    background: #8a2be2;
+    border: none;
+    color: #fff;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    margin-left: 0.5rem;
+}
+.search-bar button:hover{
+    background: #4b0082;
+}
+
+/*
+Estilos de los iconos entre la barra de navegacion y los botones de de Login y Sign Up 
+*/
+.icons{
+    display: flex;
+    align-items: center;
+}
+.icons i{
+    font-size: 1.5rem;
+    margin: 0 0.5rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+.icons i:hover{
+    transform: scale(1.2);
+    color: #ff1493;
+}
+.icons i:active{
+    transform: scale(1.4);
+}
+
+/*
+Estilos de los botones de login y Sign Up
+*/
+.auth-buttons{
+    display: flex;
+    margin-left: 1rem;
+}
+.auth-buttons button{
+    background: #8a2be2;
+    border: none;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    margin-left: 0.5rem;
+    transition: background 0.3s ease;
+}
+.auth-buttons button:hover{
+    background: #ff1493;
+}
+
+/*Seccion de estilos de las ventanas modales*/
+.grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem;
+}
+.post{
+    width: 50%;
+    aspect-ratio: 1;
+    background: linear-gradient(135deg, #8a2be2, #4b0082);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 65%;
+    margin: 0 auto;
+}
+.post:hover{
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(225, 225, 225, 0.9);
+}
+.post i{
+    font-size: 8rem;
+    color: #fff;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+.post:hover i{
+    transform: rotate(360deg);
+    color: #ff1493;
+}
+
+/*Estilos de las ventanas modales cuando estan abiertas.
+estos estilos comprenden toda la interfaz de las ventanas modales*/
+.modal{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+.modal.active{
+    display: flex;
+}
+.modal-content{
+    background-color: #333;
+    border: none;
+    border-radius: 1rem;
+    padding: 1rem;
+    max-width: 400px;
+    width: 90%;
+    color: #fff;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    position: relative;
+}
+.close-btn{
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 500px;
+    transition: 1s;
+}
+.close-btn:hover{
+    transform: rotate(360deg);
+    color: #ff1493;
+}
+.modal-content img{
+    width:100%;
+    border-radius: 1rem;
+    margin-bottom: 0.5rem;
+}
+.modal-content button{
+    background: linear-gradient(90deg, #8a2be2, #4b0082);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    color: #fff;
+    cursor: pointer;
+}
+.modal-content button:hover{
+    opacity: 0.8;
+}
+.icons{
+    display: flex;
+    justify-content:right;
+    margin-top: 1rem;
+    margin-bottom: 10px;
+}
+.icons i{
+    font-size: 1rem;
+    cursor: pointer;
+    transition: opacity 0.3s ease, transform 03s ease;
+}
+.icons i:hover{
+    opacity: 0.7;
+    transform: scale(1.1);
+}
+.icons i:active{
+    transform: scale(1.2);
+    color: #ff1493;
+}
+.name{
+    margin-top: 1rem;
+    font-size: 2rem;
+    font-weight: 100;
+    color: #fff;
+    text-align: left;
+    transition: all 0.5s ease;
+}
+.name:hover{
+    cursor:crosshair;
+    background: linear-gradient(45deg, #ff1493, #8a2be2, #4b0082);
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 10px #ff1493,0 0 20px #8a2be2,0 0 30px #4b0082;
+}
+.modal-content p{
+    text-align: left;
+    margin-top: 0.5rem;
+    font-weight: 100;
+}
+/*
+En esta seccion se encuentran los estilos del footer o pie de pagina, con enlace a redes sociales y algunos enlaces dentro del sitio.
+*/
+
+footer{
+    background: #111;
+    color: #fff;
+    padding: 2rem 0;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+footer .footer-links{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+footer .footer-links a{
+    color: #8a2be2;
+    text-decoration: none;
+}
+
+footer .footer-links a:hover{
+    color: #ff1493;
+}
+footer .social-icons{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+footer .social-icons i{
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+footer .social-icons i:hover{
+    transform: scale(1.2);
+    color: #ff1493;
+}
+
+
+/*
+Responsive styles for SmarthPhone
+*/
+@media(max-width:800px){
+    body{
+        padding: 0 5%;
+    }
+    .header{
+        flex-direction: column;
+        text-align: center;
+    }
+    .search-bar{
+        width: 80%;
+        margin-top: 1rem;
+    }
+    .icons{
+        margin-top: 1rem;
+    }
+    .grid{
+        grid-template-columns: 1fr;
+    }
+    .post{
+        max-width: 100%;
+    }
+    .close-btn{
+        top: 20px;
+        right: 100px;
+    }
+    footer .footer-links{
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    footer .social-icons{
+        gap: 0.8rem;
+    }
+
+}
